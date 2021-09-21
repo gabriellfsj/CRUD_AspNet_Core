@@ -1,0 +1,95 @@
+﻿@model IEnumerable<CRUD_CLIENTES.Models.Entidades.Clientes>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nome_completo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cpf)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.identidade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.telefone_celular)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.telefone_fixo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.telefone_comercial)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.endereço_cobrança)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.endereço_correpondencia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.endereço_entrega)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.endereço_residencial)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nome_completo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cpf)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.identidade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.telefone_celular)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.telefone_fixo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.telefone_comercial)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.endereço_cobrança)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.endereço_correpondencia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.endereço_entrega)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.endereço_residencial)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id/* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id/* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id/* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
